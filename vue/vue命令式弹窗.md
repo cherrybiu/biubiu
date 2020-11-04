@@ -120,30 +120,28 @@ export default {
 > **转为命令式可调用api**
 
 ```js
-confirm/index.js
+js/confirm/index.js
 
 import Vue from 'vue';
-import Confirm from './confirm';  // 引入组件
+import Confirm from './components/confirm.vue';  
 
-let newInstance;
-const ConfirmInstance = Vue.extend(Confirm);  // 创建构造函数
+let confirmInstance;
+const ConfirmConstructor = Vue.extend(Confirm);  // 使用extend方法创建类似Vue的构造函数
 
-const initInstance = () => { // 执行方法后完成挂载
-  newInstance = new ConfirmInstance();  // 实例化
-  document.body.appendChild(newInstance.$mount().$el);
+const initInstance = () => { 
+  newInstance = new ConfirmInstance();  
+  document.body.appendChild(confirmInstance.$mount().$el);
   // 实例化后手动挂载，得到$el真实Dom，将其添加到body最后
 }
 
-export default options => { 导出一个方法，接受配置参数
-  if (!newInstance) {
-    initInstance(); // 挂载
+export default options => { // options 为可配置选项
+  if (!confirmInstance) {
+    initInstance(); // 未挂载就进行挂载
   }
-  Object.assign(newInstance, options);
-  // 实例化后newInstance就是一个对象了，所以data内的数据会
-  // 挂载到this下，传入一个对象与之合并
+  Object.assign(confirmInstance, options); // 该操作可以修改confirmInstance,将新的配置data挂载到this下
   
-  return newInstance.show(vm => {  // 显示弹窗
-    newInstance = null;  // 将实例对象清空
+  return confirmInstance.show(vm => {  
+    confirmInstance = null;  // 调用之后即清空
   })
 }
 
@@ -152,9 +150,9 @@ export default options => { 导出一个方法，接受配置参数
 > **挂载到全局**
 
 ```js
-import Confirm from './components/index';
+import Confirm from './js/confirm/index';
 
-Vue.prototype.$Confirm = Confirm;
+Vue.prototype.$confirm = Confirm;
 
 ```
 
@@ -163,3 +161,9 @@ Vue.prototype.$Confirm = Confirm;
 ```javascript
 this.$confirm(options).then(confirm => {}).catch(cancel => {})
 ```
+
+
+
+**参考**
+
+[Vue原理解析（十一）：搞懂extend和$mount原理并实现一个命令式Confirm弹窗组件](https://juejin.im/post/6844903946088103949)
