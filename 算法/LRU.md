@@ -8,6 +8,7 @@ void put(int key, int value) 如果关键字已经存在，则变更其数据值
 ​																																										`--leecode`
 
 ```javascript
+
 /**
  * @param {number} capacity
  */
@@ -64,6 +65,82 @@ lRUCache.get(3);    // 返回 3
 lRUCache.get(4);    // 返回 4
 
 ```
+
+
+
+```javascript
+class ListNode {
+    constructor(key, value) {
+        this.key = key;
+        this.value = value;
+        this.prev = null;
+        this.next = null;
+    }
+}
+
+class LRUCache {
+    constructor(capacity) {
+        this.max = capacity;
+        this.hashTable = {};
+        this.count = 0;
+        this.dommyHead = new ListNode();
+        this.dommyTail = new ListNode();
+        this.dommyHead.next = this.dommyTail;
+        this.dommyTail.prev = this.dommyHead;
+    }
+
+    get(key) {
+        let node = this.hashTable[key];
+        if (node == null) {
+            return -1;
+        } else {
+            this.removeFromList(node);
+            this.addToHead(node);
+            return node.value
+        }
+    }
+
+    put(key, value) {
+        var node = this.hashTable[key];
+        if (node == null) {
+            let newNode = new ListNode(key, value);
+            this.count ++;
+            this.hashTable[key] = newNode;
+            this.addToHead(newNode);
+            if (this.count > this.max) {
+                this.removeTail();
+            }
+        } else {
+            node.value = value;
+            this.removeFromList(node);
+            this.addToHead(node);
+        }
+    }
+
+    removeTail() {
+        let tail = this.dommyTail.prev;
+        this.removeFromList(tail);
+        delete this.hashTable[tail.key];
+        this.count --;
+    }
+
+    removeFromList(node) {
+        let prevNode = node.prev;
+        let nextNode = node.next;
+        prevNode.next = nextNode;
+        nextNode.prev = prevNode;
+    }
+
+    addToHead(node) {
+        node.next = this.dommyHead.next;
+        node.prev = this.dommyHead;
+        node.next.prev = node;
+        this.dommyHead.next = node;
+    }
+}
+```
+
+
 
 leecode示例:
 
