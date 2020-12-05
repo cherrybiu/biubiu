@@ -7,6 +7,8 @@ void put(int key, int value) 如果关键字已经存在，则变更其数据值
 
 ​																																										`--leecode`
 
+- **时间复杂度为 O(n)**
+
 ```javascript
 
 /**
@@ -67,6 +69,8 @@ lRUCache.get(4);    // 返回 4
 ```
 
 
+
+- **时间复杂度为O(1) : 结合hashMap和链表方式**
 
 ```javascript
 class ListNode {
