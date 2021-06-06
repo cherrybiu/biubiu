@@ -1,4 +1,4 @@
-module.exports = new Map([
+[
     ['CMS-SaaS业务系统地址文档', {url: 'https://supermonkey.feishu.cn/docs/doccniKXbHJw3JMLaDQBxA6dRqb', type: 'saas'}],
     ['CMS-SaaS文档库', {url: 'http://saas.doc.internal.supermonkey.com.cn/', type: 'saas'}],
     ['超级猩猩在线文档', {url: 'http://fe.internal.supermonkey.com.cn/#/'}],
@@ -7,4 +7,4 @@ module.exports = new Map([
     ['nei接口文档地址', {url: 'http://nei.internal.supermonkey.com.cn/progroup/home/management/'}],
     ['ones平台', {url: 'https://ones.ai/project/#/home/project/view/154XmdRM'}],
     ['dev环境获取验证码', {url: 'https://user.fat.supermonkey.com.cn/admin/user/getCaptcha?phoneNumber=', type: 'app'}]
-]);
+];
