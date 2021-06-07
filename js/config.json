@@ -4,54 +4,6 @@
       "cnName": "CMS-SaaS业务系统地址文档",
       "url": "https://supermonkey.feishu.cn/docs/doccniKXbHJw3JMLaDQBxA6dRqb",
       "type": "saas"
-    },
-    {
-      "cnName": "CMS-SaaS文档库",
-      "url": "http://saas.doc.internal.supermonkey.com.cn/",
-      "type": "saas"
-    },
-    {
-      "cnName": "fat -- Jenkens",
-      "url": "http://ci.internal.fat.supermonkey.com.cn/"
-    },
-    {
-      "cnName": "uat -- Jenkens",
-      "url": "http://ci.internal.uat.supermonkey.com.cn/"
-    },
-    {
-      "cnName": "超级猩猩在线文档",
-      "url": "http://fe.internal.supermonkey.com.cn/#/"
-    },
-    {
-      "cnName": "前端飞书文档",
-      "url": "https://supermonkey.feishu.cn/drive/folder/fldcn5ZuoMaGrjv9bXXxlSLKGgd"
-    },
-    {
-      "cnName": "项目git仓库",
-      "url": "http://git.internal.supermonkey.com.cn:10080/supermonkey-web"
-    },
-    {
-      "cnName": "nei接口文档地址",
-      "url": "http://nei.internal.supermonkey.com.cn/progroup/home/management/"
-    },
-    {
-      "cnName": "ones平台",
-      "url": "https://ones.ai/project/#/home/project/view/154XmdRM"
-    },
-    {
-      "cnName": "dev环境获取验证码",
-      "url": "https://user.fat.supermonkey.com.cn/admin/user/getCaptcha?phoneNumber=",
-      "type": "app"
-    },
-    {
-      "cnName": "yapi接口文档",
-      "url": "http://yapi.internal.supermonkey.com.cn/group/43",
-      "type": "weapp"
-    },
-    {
-      "cnName": "app原型文档",
-      "url": "https://72kw6s.axshare.com/#id=vtnn9i&p=%E7%89%88%E6%9C%AC%E4%BF%AE%E8%AE%A2%E8%AF%B4%E6%98%8E&g=1",
-      "type": "app"
     }
   ]
 }
